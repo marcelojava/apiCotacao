@@ -18,7 +18,7 @@ public class RunUploadArquivoCsvSchedule {
 	}
 
 	private void loadCotacaoMoedas() {
-		final String hoje = montarData();
+		final String hoje = this.montarData();
 
 		try {
 			URL url = new URL(PROTOCOLO, ENDERECO, ARQUIVO.concat(hoje).concat(EXTENSAO));
@@ -42,9 +42,7 @@ public class RunUploadArquivoCsvSchedule {
 	private String montarData() {
 		final LocalDate dataHoje = LocalDate.now();
 
-		final String data = new StringBuilder().append(dataHoje.getYear()).append(dataHoje.getMonthValue())
+		return new StringBuilder().append(dataHoje.getYear()).append(dataHoje.getMonthValue())
 				.append(dataHoje.getDayOfMonth()).toString();
-
-		return data;
 	}
 }
